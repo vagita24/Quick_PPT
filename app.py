@@ -11,7 +11,7 @@ def home():
 
 @app.route('/return-file/')             #mapping of url (in '') to return statement ,'@' known as decorator
 def return_file():
-    return send_file('/home/sahil/Desktop/text_summarize/static/test.pptx')
+    return send_file('/home/sahil/Desktop/Quick_PPT/static/test.pptx')
 
 @app.route('/file-downloads/')             #mapping of url (in '') to return statement ,'@' known as decorator
 def file_downloads():
@@ -45,9 +45,9 @@ def predict():
         paragraphs = parsed_article.find_all('p')
 
         article_text = ""
-        current_dir='/home/sahil/Desktop/text_summarize'
+        current_dir='/home/sahil/Desktop/Quick_PPT'
         prs = Presentation(current_dir+'/template_sample.pptx')
-        subprocess.run(['rm','-rf',f'{current_dir}/test.pptx'])
+        subprocess.run(['rm','-rf',f'{current_dir}/static/test.pptx'])
         for p in paragraphs:
             article_text = p.text
             article_text = re.sub(r'\s+', ' ', article_text)
@@ -105,7 +105,7 @@ def predict():
                 if(len(summary_sentences)>=3):
                     title_slide_layout = prs.slide_layouts[1]
                     slide = prs.slides.add_slide(title_slide_layout)
-                    #title = slide.shapes.title
+                    title = slide.shapes.title
                     #subtitle = slide.placeholders[1]
 
                     title.text = new
@@ -122,7 +122,7 @@ def predict():
                 
 
 
-        prs.save('/home/sahil/Desktop/text_summarize/test.pptx')
+        prs.save('/home/sahil/Desktop/Quick_PPT/static/test.pptx')
     return render_template('download.html')
 
 if __name__ == '__main__':      #this is our main file and we have to run this directly
