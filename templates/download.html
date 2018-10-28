@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	 <title>ppt</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename = 'home_page.css')}}">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+   <a class="navbar-brand" href="template.htm"><img id="i" align="left" src="../static/images.png" class="s5_logo" width="120px" height="120px"></a>
+
+   <script>
+    jQuery(document).ready(function($) {
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 20) {
+            jQuery('.s5_logo').addClass('small-logo');
+        } else {
+            jQuery('.s5_logo').removeClass('small-logo');
+        }
+    });
+});</script>
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+    </div>
+    
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Quick Presentation</h1>
+  <p>No hassle, you only have to enter the web-address of article</p>
+
+</div>
+
+<h3>Ready To download,Please click on bellow button</h3>
+<br><br><br>
+  <div class="wrapper">
+  <a href="/return-file/" target="blank"><button align="center" class="btn btn-default">Download</button></a>
+</div>
+</body>
+</html>
